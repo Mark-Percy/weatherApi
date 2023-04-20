@@ -17,6 +17,7 @@ app.get('/', (req, resp) => {
         Welcome: 'Welcome to my api for more advanced requests to the met api'
     });
 });
+
 app.get('/v1/sites/region', (req, resp) => {
     const sites = new Sites();
     sites.getSitesForRegion(req.query).then((data) => {
@@ -27,11 +28,19 @@ app.get('/v1/sites/region', (req, resp) => {
 app.get('/check', (req, resp) => {
     resp.send({system:true});
 })
+
 app.get('/v1/sites/auth-area', (req, resp) => {
     const sites = new Sites();
     sites.getSitesForAuthArea(req.query).then((data) => {
         resp.send(data);
     });
+});
+
+app.get('/v1/sites/sites', (req, resp) => {
+    let sites = new Sites();
+    sites.getSites().then(data => {
+        resp.send(data)
+    })
 });
 
 app.listen(
