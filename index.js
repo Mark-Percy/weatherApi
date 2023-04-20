@@ -36,7 +36,7 @@ app.get('/v1/sites/auth-area', (req, resp) => {
     });
 });
 
-app.get('/v1/sites/sites', (req, resp) => {
+app.get('/v1/sites', (req, resp) => {
     let sites = new Sites();
     sites.getSites().then(data => {
         resp.send(data)
