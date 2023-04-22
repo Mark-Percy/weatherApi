@@ -1,6 +1,7 @@
 import { Sites } from "./src/v1/sites/sites.js"
 import express from "express"
 import cors from 'cors'
+import pathsv2 from "./src/v2/routes.js";
 
 const app = express();
 
@@ -9,10 +10,11 @@ const corsOptions = {
 };
   
 app.use(cors(corsOptions));
+app.use('/v2',pathsv2)
 
 const PORT = 3030;
 
-app.get('/', (req, resp) => {
+app.get('/v1', (req, resp) => {
     resp.send({
         Welcome: 'Welcome to my api for more advanced requests to the met api'
     });
