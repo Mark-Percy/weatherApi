@@ -6,7 +6,6 @@ export class Sites {
     constructor() {
         this.url.searchParams.append('key', environment.keys.weatherKey);
         this.url.pathname = `${this.url.pathname}/sitelist`
-        console.log(this.url.toString())
     }
 
     async getSitesData() {

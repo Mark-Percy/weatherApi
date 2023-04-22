@@ -1,4 +1,3 @@
-import { Sites } from "./src/v1/sites/sites.js"
 import express from "express"
 import cors from 'cors'
 import pathsv1 from "./src/v1/routes.js";
